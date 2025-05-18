@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethiopian Food - Habesh Foods</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <button onclick="toggleTheme()">Toggle Light/Dark Mode</button>
+
+    <section class="hero">
+        <h1>Welcome to Habesh Foods</h1>
+        <button onclick="document.querySelector('#about').scrollIntoView({ behavior: 'smooth' })">Learn More</button>
+    </section>
+
+    <section id="about">
+        <h2>About Ethiopian Traditional Foods</h2>
+        <p>Ethiopian cuisine is known for its rich flavors, unique spices, and communal dining style. Meals are often served on injera, a soft flatbread made from teff flour. Popular dishes include spicy stews, slow-cooked meats, and vegetarian platters.</p>
+        <button id="learnMoreBtn">Learn More</button>
+        <p id="hiddenInfo" style="display: none;">Ethiopian food culture emphasizes communal eating and sharing meals. Meals are traditionally served on a large platter.</p>
+    </section>
+
+    <section id="menu">
+        <h2>Menu - Traditional Foods & Drinks</h2>
+        <h3>Traditional Foods</h3>
+        <input type="text" id="searchBox" placeholder="Search menu..." />
+        <button onclick="suggestFood()">What should I eat?</button>
+        <p id="suggestion"></p>
+
+        <ol>
+            <li><a href="https://en.wikipedia.org/wiki/Doro_wat" target="_blank">Doro Wat</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Shiro_(food)" target="_blank">Shiro</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Tibs" target="_blank">Tibs</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Beyaynetu" target="_blank">Beyayenetu</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Wat_(food)#Key_wat" target="_blank">Key Wet</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Ethiopian_cuisine" target="_blank">Gomen</a></li>
+        </ol>
+
+        <h3>Drinks</h3>
+        <ul>
+            <li>Non-Alcoholic Drinks
+                <ul>
+                    <li><a href="https://en.wikipedia.org/wiki/Water" target="_blank">Water</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Soft_drink" target="_blank">Soft Drinks</a></li>
+                </ul>
+            </li>
+            <li>Alcoholic Drinks
+                <ul>
+                    <li><a href="https://en.wikipedia.org/wiki/Tella" target="_blank">Tella</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Tej" target="_blank">Tej</a></li>
+                </ul>
+            </li>
+        </ul>
+        <h3>Add Your Favorite Dish</h3>
+        <input type="text" id="newDishInput" placeholder="Enter dish name">
+        <button onclick="addDish()">Add</button>
+        <ul id="customList"></ul>
+
+    </section>
+
+    <section>
+        <h2>Cooking Demo</h2>
+        <p>Want to learn how to make Doro Wat, Ethiopia’s famous chicken stew? Watch this video to see the step-by-step recipe.</p>
+      
+        <button id="openModalBtn">Watch Doro Wat Recipe</button>
+        <div id="videoModal" class="modal" style="display: none;">
+          <span id="closeModal" style="float:right; cursor:pointer; font-size: 1.5rem;">&times;</span>
+          <iframe width="100%" height="315" 
+            src="https://www.youtube.com/embed/zi4AT6uYKUs" 
+            frameborder="0" allowfullscreen>
+          </iframe>
+        </div>
+      </section>
+      
+      <section id="gallery" class="gallery">
+        <h2>Gallery</h2>
+        <img id="sliderImage" src="https://eggs.ca/wp-content/uploads/2024/06/EFC-doro-wat-hero-1280x720-1.jpg" alt="Food" width="300">
+      </section>
+      
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Name" required><br><br>
+            <input type="email" placeholder="Email" required><br><br>
+            <textarea placeholder="Your message" required></textarea><br><br>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
